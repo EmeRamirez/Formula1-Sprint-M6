@@ -8,10 +8,10 @@ const app = express();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 hbs.registerPartials(join(__dirname,"/views/partials"));
-
+app.use(indexRoutes);
 app.set('view engine', 'hbs');
 app.set('views' , './views');
 app.use(express.static("public"));
-app.use(indexRoutes);
+
 
 app.listen(3000);
