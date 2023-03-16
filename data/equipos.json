@@ -1,0 +1,11 @@
+{ "equipos": [{ "escuderia": "Alfa Romeo", "piloto1": "Valtteri Bottas", "piloto2": "Guanyu Zhou"},
+{ "escuderia": "Alpine", "piloto1": "Esteban Ocon", "piloto2": "Pierre Gasly" },
+{ "escuderia": "Alpha Tauri", "piloto1": "Nyck de Vries", "piloto2": "Yuki Tsunoda"},
+{ "escuderia": "Aston Martin", "piloto1": "Lance Stroll", "piloto2": "Fernando Alonso" },
+{ "escuderia": "Ferrari", "piloto1": "Charles Leclerc", "piloto2": "Carlos Sainz" },
+{ "escuderia": "Haas", "piloto1": "Kevin Magnussen", "piloto2": "Nico Hulkenberg" },
+{ "escuderia": "McLaren", "piloto1": "Lando Norris", "piloto2": "Oscar Piastri" },
+{ "escuderia": "Mercedes", "piloto1": "Lewis Hamilton", "piloto2": "George Russell" },
+{ "escuderia": "Red Bull", "piloto1": "Max Verstappen", "piloto2": "Checo Pérez" },
+{ "escuderia": "Williams", "piloto1": "Alex Albon", "piloto2": "Logan Sargeant" }
+]} 
