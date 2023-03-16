@@ -6,13 +6,21 @@
   "name": "sprint-m6",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmeRamirez/Sprint-M6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EmeRamirez/Sprint-M6/issues"
+  },
+  "homepage": "https://github.com/EmeRamirez/Sprint-M6#readme",
   "description": ""
 }
