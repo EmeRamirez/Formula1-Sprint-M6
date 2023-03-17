@@ -1,66 +1,179 @@
 @import url(formulario.css);
 
 @font-face {
-    font-family:"f1bold";
+    font-family: "f1bold";
     src: url(../fonts/Formula1-Bold_web_0.ttf) format("truetype");
 }
 
 @font-face {
-    font-family:"f1regular";
+    font-family: "f1regular";
     src: url(../fonts/Formula1-Regular_web_0.ttf) format("truetype");
 }
+
 @font-face {
-    font-family:"titiLight";
+    font-family: "titiLight";
     src: url(../fonts/TitilliumWeb-Light.ttf) format("truetype");
 }
+
 @font-face {
-    font-family:"titiBold";
+    font-family: "titiBold";
     src: url(../fonts/TitilliumWeb-Bold.ttf) format("truetype");
 }
+
 :root {
-    --f1Red: RGB(229,27,0);
-    --f1Dark: RGB(21,21,29); 
-  }
-
-.logos img{
-    fill: aqua;
+    --f1Red: RGB(229, 27, 0);
+    --f1Dark: RGB(21, 21, 29);
+    --f1Light: rgb(233, 233, 233);
+    --f1Gray: rgb(77, 77, 77);
 }
-.foot{
-    font-family: titiLight ;
+
+/* .tarjeta >div{
+    display: flex;
+    justify-content:start;
+    gap: 0px;
+    border: 1px solid black;
+} */
+/* .info :nth-child(n) { */
+
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: titibold;
     color: var(--f1Dark);
-    background-color: var(--f1Red)
+    gap: 30px;
 }
 
-a,a:visited{
+.info :nth-child(n){
+    padding-left: 20px;
+    min-width: 130px;
+    /* border: 1px solid red; */
+}
+
+.tarjeta {
+
+    display: flex;
+    justify-content: left;
+    gap: 0px;
+    border: 1px solid black;
+    margin-top: 3px;
+    background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
+
+}
+
+.tarjeta img {
+    max-width: 100px;
+}
+
+.separador1 {
+    min-width: 30px;
+    background-color: var(--f1Red);
+}
+
+.separador {
+    background-color: var(--f1Dark);
+    /* background: linear-gradient(0deg, rgba(233,233,233,1) 0%, rgb(98, 98, 98) 80%); */
+}
+
+.tablaPosiciones {
+    background-color: var(--f1Dark);
+    font-family: titibold;
+    color: var(--f1Light);
+    padding-left: 50px;
+    margin-bottom: 5px;
+    border-top: 3px solid var(--f1Gray);
+    border-bottom: 3px solid var(--f1Red);
+
+}
+
+.pos {
+    color: var(--f1Gray);
+    font-size: 20px;
+    font-family: f1bold;
+    padding-left: 7px;
+    padding-right: 7px;
+    /* margin-left: 20px; */
+}
+
+.numPos {
+    font-size: 20px;
+    font-family: f1regular;
+    color: var(--f1Light);
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.footLogoF1{
+    filter: invert(100%) sepia(4%) saturate(0%) hue-rotate(349deg) brightness(106%) contrast(108%);
+}
+.footLogoF1 img{
+    min-width: 250px;
+    padding: 20px;
+}
+
+.foot1{
+    padding: 20px;
+    color:var(--f1Light)
+}
+.foot3{
+    /* border: 1px solid wheat; */
+    padding: 20px;
+    color:var(--f1Light)
+}
+
+.cierre{
+    background-color: var(--f1Dark);
+    color: var(--f1Light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+.piePagina {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: titiLight;
+    color: var(--f1Light);
+    background-color: var(--f1Red);
+    gap: 10px;
+}
+/* .footers{
+    display: flex;
+    justify-content: ;
+} */
+
+
+a,
+a:visited {
     text-decoration: none;
     color: white;
     font-weight: 800;
     letter-spacing: 2px;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
     min-height: 70px;
     padding-left: 30px;
-    gap:25px;
+    gap: 25px;
     background-color: rgb(9, 9, 22);
 }
 
-.btn-outline-danger{
+.btn-outline-danger {
     /* background-color: rgb(201, 36, 36) !important; */
     max-height: 40px;
-    --bs-btn-border-color:rgb(201, 36, 36) !important;
-    --bs-btn-hover-bg:rgb(201, 36, 36) !important;
+    --bs-btn-border-color: var(--f1Red) !important;
+    --bs-btn-hover-bg: var(--f1Red)  !important;
 }
 
 
 
-.btn-danger:hover{
+.btn-danger:hover {
     transform: scale(105%);
 }
 
-.card{
+.card {
     border: 5px solid black;
     max-width: 300px;
 }
@@ -74,5 +187,3 @@ nav{
 .formulario {
     border: 1px solid black;
 }
-
-
