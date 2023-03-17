@@ -7,7 +7,7 @@
             "escudo": "https://acortar.link/6YbUqC",
             "posiciones":[],
             "tiempos":[],
-            "abandono":false
+            "abandono":[]
         },   
         {
             "piloto":"Guanyu",
@@ -16,7 +16,7 @@
             "escudo": "https://acortar.link/6YbUqC",
             "posiciones":[],
             "tiempos":[],
-            "abandono":false
+            "abandono":[]
         }  
     ]
 }
