@@ -49,17 +49,17 @@
 
 .form-select{
     margin-bottom: 2vw;
-    background-color: rgba(0, 0, 0, 0.846);
+    background-color: #15151ee3;
     color: aliceblue;
 }
 
 .form-control{
-    background-color: rgba(0, 0, 0, 0.846);
+    background-color: #15151ee3;
     color: aliceblue;
 }
 
 .form-control:disabled{
-    background-color: rgba(0, 0, 0, 0.846);
+    background-color: #15151ee3;
     color: aliceblue;
 }
 
