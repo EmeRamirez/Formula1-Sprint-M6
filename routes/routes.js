@@ -12,6 +12,7 @@ router.get('/', (req,res) => {
         res.render("home",{equipos:arrEquipos});
     })
     .catch(err => {
+        res.render("404");
         console.log("No se pudo leer el archivo.");
         res.render("error")
     })  
