@@ -17,18 +17,36 @@ router.get('/', (req,res) => {
         res.render("error")
     })  
 })
-
+let arrPilotos;
 router.get('/mantenedor', (req,res) => {
-    leerArchivo('./data/resultados.json')
+    leerArchivo('./data/resulprueba.json')
     .then(data => {
         let json = data;
-        let arrPilotos = Object.values(json);
+        arrPilotos = Object.values(json);
         res.render("mantenedor",{pilotos:arrPilotos[0]})
     })
     .catch(err => {
         res.render("error");
-    })
-   
+    })  
+})
+
+router.post('/mantenedor', (req,res) => {
+    let carreraIndex = req.body.select;
+    console.log(carreraIndex); 
+
+     for (let i=0 ; i<=2 ; i++){
+        let piloto = req.body['nombre'+i];
+        let tiempo = parseFloat(req.body['tiempo'+i]);
+        let check = Boolean(req.body['check'+i]);
+ 
+        (check == true) ? tiempo = 999 : tiempo=tiempo;
+        
+        let obj = {nombre:piloto,tiempo:tiempo,abandono:check};
+        console.log(obj);
+     }
+    
+
+    res.render("mantenedor",{pilotos:arrPilotos[0]});
 })
 
 

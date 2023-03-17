@@ -1,19 +1,19 @@
-<!-- CARD 1 -->
+<!-- CARD -->
 <div class="mb-3 col-11 container-piloto">
     <div class="col-5">
         <label for="nombre0" class="form-label">{{escuderia}}</label>
-        <input type="text" name="nombre{{@index}}" class="form-control" value={{piloto}} disabled>
+        <input type="text" name="nombre{{@index}}" class="form-control" value={{piloto}} readonly>
     </div>
-    <div class="col-2">
+    {{!-- <div class="col-2">
         <label for="posicion0" class="form-label">Posición</label>
-        <input type="number" name="posicion{{@index}}" class="form-control" placeholder="Posición">
+        <input type="number" name="posicion{{}}" class="form-control" placeholder="Posición">
+    </div> --}}
+    <div class="col-3">
+        <label for="tiempo0" class="form-label">Tiempo</label>
+        <input type="float" name="tiempo{{@index}}" class="form-control" placeholder="Tiempo" required>
     </div>
-    <div class="col-2">
-        <label for="exampleFormControlInput1" class="form-label">Tiempo</label>
-        <input type="number" name="tiempo{{@index}}" class="form-control" placeholder="Tiempo">
-    </div>
-    <div class="form-check form-switch form-check-reverse col-2">
+    <div class="form-check form-switch form-check-reverse col-3">
         <label class="form-check-label" for="flexSwitchCheckReverse">Abandono</label>
-        <input class="form-check-input" name="check{{@index}}" type="checkbox" value="" id="flexSwitchCheckReverse">
+        <input class="form-check-input" name="check{{@index}}" type="checkbox"  id="flexSwitchCheckReverse">
     </div>
 </div>

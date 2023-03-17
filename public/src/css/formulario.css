@@ -92,14 +92,14 @@
 .container-piloto{
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 30px;
 }
 
 .form-check-input{
     height: 2em !important;
     width: 3.5em !important;
     margin-top: 10px;
-    margin-right: 14px !important;
+    margin-right: 20px !important;
 }
 
 .form-check-input:checked,.form-check-input:focus{

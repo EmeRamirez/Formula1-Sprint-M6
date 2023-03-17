@@ -7,11 +7,11 @@
         <h5 class="subtituloform">Ingrese los datos de las carreras</h5>
 
         <!-- FORMULARIO -->
-        <div class="cont-int-form col-7">
+        <form class="cont-int-form col-6" action="mantenedor" method="post" validate>
             <label for="exampleFormControlInput1" class="form-label">Carrera</label>
             <div class="mb-3 col-6">
-                <select class="form-select" aria-label="">
-                <option selected>Seleccione una carrera</option>
+                <select class="form-select" name="select" aria-label="" required>
+                <option >Seleccione una carrera</option>
                 <option value="0">Gulf Air Bahrain GP</option>
                 <option value="1">STC Saudi Arabian GP</option>
                 <option value="2">Rolex Australian GP</option>
@@ -44,9 +44,9 @@
             {{/each}}
             
             <div class="btn-cont">
-                <button href="confirmacion" class="btn btn-danger">Enviar</button>
+                <button type="submit" href="mantenedor" class="btn btn-danger">Enviar</button>
             </div>
-        </div>
+        </form>
     </div>
 
     
