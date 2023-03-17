@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { Router } from "express";
-import { leerArchivo } from "../utils/handlers.js";
+import { calcularPos, leerArchivo } from "../utils/handlers.js";
 const router = Router();
 
 router.get('/', (req,res) => {
@@ -19,7 +19,7 @@ router.get('/', (req,res) => {
 })
 let arrPilotos;
 router.get('/mantenedor', (req,res) => {
-    leerArchivo('./data/resulprueba.json')
+    leerArchivo('./data/resultados.json')
     .then(data => {
         let json = data;
         arrPilotos = Object.values(json);
@@ -31,22 +31,35 @@ router.get('/mantenedor', (req,res) => {
 })
 
 router.post('/mantenedor', (req,res) => {
+    // Se almacena el index del circuito
     let carreraIndex = req.body.select;
+    //Si el index del circuito no es válido (-1), se recarga la página.
+    if (carreraIndex == -1){  
+        res.send("<script>alert('Seleccione una carrera, aweonao');window.location.href='/mantenedor'</script>");    
+    } else {
+
+    let arrCarrera = [];
     console.log(carreraIndex); 
 
-     for (let i=0 ; i<=2 ; i++){
+     for (let i=0 ; i<=19 ; i++){
         let piloto = req.body['nombre'+i];
         let tiempo = parseFloat(req.body['tiempo'+i]);
         let check = Boolean(req.body['check'+i]);
  
         (check == true) ? tiempo = 999 : tiempo=tiempo;
         
-        let obj = {nombre:piloto,tiempo:tiempo,abandono:check};
-        console.log(obj);
+        let obj = {nombre:piloto,tiempo:tiempo,abandono:check,posicion:0,puntaje:0};
+        arrCarrera.push(obj);
      }
-    
+
+    arrCarrera.sort((a,b) => (a.tiempo - b.tiempo))
+
+    calcularPos(arrCarrera);
+    console.log(arrCarrera);
 
     res.render("mantenedor",{pilotos:arrPilotos[0]});
+
+}    
 })
 
 
