@@ -34,12 +34,21 @@
     font-family:f1bold;
     color:var(--f1Light);
     letter-spacing: 2px;
+    background-color: var(--f1Dark);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .subtituloform{
     font-family:f1regular;
     color:white;
     padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
     backdrop-filter: brightness(50%);
 }
 
