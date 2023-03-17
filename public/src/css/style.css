@@ -1,0 +1,57 @@
+@import url(formulario.css);
+
+@font-face {
+    font-family:"f1bold";
+    src: url(../fonts/Formula1-Bold_web_0.ttf) format("truetype");
+}
+
+@font-face {
+    font-family:"f1regular";
+    src: url(../fonts/Formula1-Regular_web_0.ttf) format("truetype");
+}
+
+a,a:visited{
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    padding-left: 30px;
+    gap:25px;
+    background-color: rgb(9, 9, 22);
+}
+
+.btn-outline-danger{
+    /* background-color: rgb(201, 36, 36) !important; */
+    max-height: 40px;
+    --bs-btn-border-color:rgb(201, 36, 36) !important;
+    --bs-btn-hover-bg:rgb(201, 36, 36) !important;
+}
+
+
+
+.btn-danger:hover{
+    transform: scale(105%);
+}
+
+.card{
+    border: 5px solid black;
+    max-width: 300px;
+}
+
+.container-externo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px
+}
+
+.formulario {
+    border: 1px solid black;
+}
+
+

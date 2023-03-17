@@ -1,20 +1,23 @@
 import * as fs from "fs";
 import { Router } from "express";
-import { leerArchivo } from "../utils/functions.js";
+import { leerArchivo } from "../utils/handlers.js";
 const router = Router();
 
 router.get('/', (req,res) => {
     leerArchivo('./data/equipos.json')
     .then(data => {
-        let equipos = data;
-        let arrEquipos = Object.values(equipos.equipos);
-        console.log(arrEquipos[0]);
+        let json = data;
+        let arrEquipos = Object.values(json.equipos);
+        console.log(arrEquipos);
         res.render("home",{equipos:arrEquipos});
     })
     .catch(err => {
         console.log("No se pudo leer el archivo.");
-    })
-    
+    })  
+})
+
+router.get('/mantenedor', (req,res) => {
+   res.render("mantenedor")
 })
 
 
