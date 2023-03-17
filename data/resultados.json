@@ -1,0 +1,22 @@
+{
+    "resultados":[
+        {
+            "piloto":"Valtteri",
+            "nombre":"Valtteri Bottas",
+            "escuderia":"Alfa Romeo",
+            "escudo": "https://acortar.link/6YbUqC",
+            "posiciones":[],
+            "tiempos":[],
+            "abandono":false
+        },   
+        {
+            "piloto":"Guanyu",
+            "nombre":"Guanyu Zhou",
+            "escuderia":"Alfa Romeo",
+            "escudo": "https://acortar.link/6YbUqC",
+            "posiciones":[],
+            "tiempos":[],
+            "abandono":false
+        }  
+    ]
+}

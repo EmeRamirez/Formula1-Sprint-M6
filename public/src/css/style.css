@@ -33,6 +33,10 @@ nav{
     --bs-btn-hover-bg:rgb(201, 36, 36) !important;
 }
 
+.btn-danger{
+    background-color: rgb(201, 36, 36) !important;
+}
+
 
 
 .btn-danger:hover{

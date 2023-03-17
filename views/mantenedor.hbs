@@ -1,22 +1,54 @@
 {{#> layout}}
-    <main>
-        
-        <div class="cont-ext-form">
-            <!-- TITULO -->
-            <h1 class="tituloform"><span class="highlight-text">F</span>ormular<span class="highlight-text">1</span>o</h1>
-            <h5 class="subtituloform">Ingrese los datos de las carreras</h5>
+<main>
+    
+    <div class="cont-ext-form">
+        <!-- TITULO -->
+        <h1 class="tituloform"><span class="highlight-text">F</span>ormular<span class="highlight-text">1</span>o</h1>
+        <h5 class="subtituloform">Ingrese los datos de las carreras</h5>
 
-            <!-- FORMULARIO -->
-            <div class="cont-int-form col-7">
-                <div class="mb-3 col-11">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                </div>
-                <div class="mb-3 col-11">
-                    <label for="exampleFormControlTextarea1" class="form-label">Email address</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
+        <!-- FORMULARIO -->
+        <div class="cont-int-form col-9">
+            <label for="exampleFormControlInput1" class="form-label">Carrera</label>
+            <div class="mb-3 col-6">
+                <select class="form-select" aria-label="">
+                <option selected>Seleccione una carrera</option>
+                <option value="0">Gulf Air Bahrain GP</option>
+                <option value="1">STC Saudi Arabian GP</option>
+                <option value="2">Rolex Australian GP</option>
+                <option value="3">GP de Azerbaiyán</option>
+                <option value="4">Crypto.com Miami GP</option>
+                <option value="5">Made in Italy Emilia Romagna GP</option>
+                <option value="6">GP de Mónaco</option>
+                <option value="7">AWS Spanish GP</option>
+                <option value="8">Pirelli Canada GP</option>
+                <option value="9">GP de Austria, Red Bull Ring</option>
+                <option value="10">Aramco British GP</option>
+                <option value="11">GP de Hungría</option>
+                <option value="12">GP de Bélgica</option>
+                <option value="13">Heineken Dutch GP</option>
+                <option value="14">Pirelli Italian GP</option>
+                <option value="15">Singapore Airlines Singapore GP</option>
+                <option value="16">Lenovo Japanese GP</option>
+                <option value="17">Qatar GP</option>
+                <option value="18">Lenovo United States GP</option>
+                <option value="19">Mexico GP</option>
+                <option value="20">Rolex Brazil GP</option>
+                <option value="21">Heineken Las Vegas GP</option>
+                <option value="22">Etihad Airways Abu Dhabi GP</option>
+                </select>
+            </div>
+
+            <!-- CARDS PILOTO FORMULARIO -->
+            {{#each pilotos}}
+                {{> cardmantenedor}}
+            {{/each}}
+            
+            <div class="btn-cont">
+                <button href="confirmacion" class="btn btn-danger">Enviar</button>
             </div>
         </div>
-    </main>
+    </div>
+
+    
+</main>
 {{/layout}}

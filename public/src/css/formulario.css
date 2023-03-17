@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 5vw;
-    background-image: url('https://wallpapercave.com/wp/wp10472765.png');
+    background-image: url('https://wallpapercave.com/wp/wp8977888.jpg');
     background-size: cover;
     padding-bottom: 10vw;
 }
@@ -17,7 +17,7 @@
     border-radius: 12px;
     border: 5px solid rgb(168, 11, 11);
     /* background-color: rgba(46, 45, 45, 0.795); */
-    backdrop-filter: blur(2px) sepia(50%);
+    backdrop-filter: blur(2px) sepia(50%) brightness(50%);
     color:white;
     font-family:f1regular;
     letter-spacing: 2px;
@@ -34,10 +34,64 @@
 .subtituloform{
     font-family:f1regular;
     color:white;
-    padding: 3px;
+    padding: 3px 8px;
     backdrop-filter: brightness(50%);
 }
 
 .highlight-text {
     color:#c50118;
+}
+
+.form-label{
+    background-color: rgba(0, 0, 0, 0.49);
+    padding: 0 6px;
+}
+
+.form-select{
+    margin-bottom: 2vw;
+    background-color: rgba(0, 0, 0, 0.846);
+    color: aliceblue;
+}
+
+.form-control{
+    background-color: rgba(0, 0, 0, 0.846);
+    color: aliceblue;
+}
+
+.form-control:disabled{
+    background-color: rgba(0, 0, 0, 0.846);
+    color: aliceblue;
+}
+
+.form-check-label{
+    background-color: rgba(0, 0, 0, 0.49);
+    color: aliceblue;
+    padding: 0 6px;
+}
+
+.form-control:focus{
+    background-color: rgba(214, 6, 6, 0.47);
+    color: aliceblue !important;
+}
+
+.container-piloto{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.form-check-input{
+    height: 2em !important;
+    width: 3.5em !important;
+    margin-top: 10px;
+    margin-right: 14px !important;
+}
+
+.form-check-input:checked,.form-check-input:focus{
+    background-color: #b2202e;
+    border-color: #c50118;
+}
+
+.btn-cont{
+    margin-top: 3.5vw;
 }

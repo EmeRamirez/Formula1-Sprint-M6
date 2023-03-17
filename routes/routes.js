@@ -8,16 +8,26 @@ router.get('/', (req,res) => {
     .then(data => {
         let json = data;
         let arrEquipos = Object.values(json.equipos);
-        console.log(arrEquipos);
+        // console.log(arrEquipos);
         res.render("home",{equipos:arrEquipos});
     })
     .catch(err => {
         console.log("No se pudo leer el archivo.");
+        res.render("error")
     })  
 })
 
 router.get('/mantenedor', (req,res) => {
-   res.render("mantenedor")
+    leerArchivo('./data/resultados.json')
+    .then(data => {
+        let json = data;
+        let arrPilotos = Object.values(json);
+        res.render("mantenedor",{pilotos:arrPilotos[0]})
+    })
+    .catch(err => {
+        res.render("error");
+    })
+   
 })
 
 
