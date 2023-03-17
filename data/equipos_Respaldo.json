@@ -2,61 +2,61 @@
     "equipos": [
         {
             "escuderia": "Alfa Romeo",
-            "escudo": "https://www.linkpicture.com/q/alfaromeo_1.png",
+            "escudo": "https://acortar.link/6YbUqC",
             "piloto1": "Valtteri Bottas",
             "piloto2": "Guanyu Zhou"
         },
         {
             "escuderia": "Alpine",
-            "escudo":"https://www.linkpicture.com/q/alpine.png",
+            "escudo":"https://acortar.link/vNZCPd",
             "piloto1": "Esteban Ocon",
             "piloto2": "Pierre Gasly"
         },
         {
             "escuderia": "Alpha Tauri",
-            "escudo":"https://www.linkpicture.com/q/alphatauri.png",
+            "escudo":"https://acortar.link/IGxm2x",
             "piloto1": "Nyck de Vries",
             "piloto2": "Yuki Tsunoda"
         },
         {
             "escuderia": "Aston Martin",
-            "escudo":"https://www.linkpicture.com/q/astonmartin.png",
+            "escudo":"https://acortar.link/jwwo56",
             "piloto1": "Lance Stroll",
             "piloto2": "Fernando Alonso"
         },
         {
             "escuderia": "Ferrari",
-            "escudo":"https://www.linkpicture.com/q/ferrari.png",
+            "escudo":"https://acortar.link/3aYU2D",
             "piloto1": "Charles Leclerc",
             "piloto2": "Carlos Sainz"
         },
         {
             "escuderia": "Haas",
-            "escudo":"https://www.linkpicture.com/q/haas.png",
+            "escudo":"https://acortar.link/SIyTxL",
             "piloto1": "Kevin Magnussen",
             "piloto2": "Nico Hulkenberg"
         },
         {
             "escuderia": "McLaren",
-            "escudo":"https://www.linkpicture.com/q/mclaren_2.png",
+            "escudo":"https://acortar.link/ntCQW5",
             "piloto1": "Lando Norris",
             "piloto2": "Oscar Piastri"
         },
         {
             "escuderia": "Mercedes",
-            "escudo":"https://www.linkpicture.com/q/mercedesbenz.png",
+            "escudo":"https://acortar.link/qQebXF",
             "piloto1": "Lewis Hamilton",
             "piloto2": "George Russell"
         },
         {
             "escuderia": "Red Bull",
-            "escudo":"https://www.linkpicture.com/q/redbull_1.png",
+            "escudo":"https://acortar.link/uOC7jz",
             "piloto1": "Max Verstappen",
             "piloto2": "Checo Pérez"
         },
         {
             "escuderia": "Williams",
-            "escudo":"https://www.linkpicture.com/q/williams.png",
+            "escudo":"https://acortar.link/fxnbKh",
             "piloto1": "Alex Albon",
             "piloto2": "Logan Sargeant"
         }
