@@ -42,7 +42,9 @@
     color: var(--f1Dark);
     gap: 30px;
 }
-
+.tarjetaMula{
+    display: none;
+}
 .info :nth-child(n){
     padding-left: 20px;
     min-width: 130px;
