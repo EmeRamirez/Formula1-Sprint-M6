@@ -9,6 +9,27 @@
     font-family:"f1regular";
     src: url(../fonts/Formula1-Regular_web_0.ttf) format("truetype");
 }
+@font-face {
+    font-family:"titiLight";
+    src: url(../fonts/TitilliumWeb-Light.ttf) format("truetype");
+}
+@font-face {
+    font-family:"titiBold";
+    src: url(../fonts/TitilliumWeb-Bold.ttf) format("truetype");
+}
+:root {
+    --f1Red: RGB(229,27,0);
+    --f1Dark: RGB(21,21,29); 
+  }
+
+.logos img{
+    fill: aqua;
+}
+.foot{
+    font-family: titiLight ;
+    color: var(--f1Dark);
+    background-color: var(--f1Red)
+}
 
 a,a:visited{
     text-decoration: none;
