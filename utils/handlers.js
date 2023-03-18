@@ -8,8 +8,8 @@ export async function leerArchivo(url) {
     return await JSON.parse(data);
 }
 
-// export async function escribirArchivo(data) {
-//     fs.writeFile("./db.json", JSON.stringify(data), err => {
-//         if (err) throw err
-//     });
-// }
+export async function escribirArchivo(url,data) {
+    fs.writeFile(url, JSON.stringify(data), err => {
+        if (err) throw console.log('No se pudo guardar el JSON');
+    });
+}
