@@ -1,7 +1,8 @@
 <!-- CARD -->
 <div class="mb-3 col-11 container-piloto">
     <div class="col-5">
-        <label for="nombre{{@index}}" class="form-label">{{escuderia}}</label>
+        <label for="wea" class="form-label">{{escuderia}}</label>
+        <input type="text" name="escud{{@index}}" class="form-control d-none" value={{escuderia}} readonly>
         <input type="text" name="nombre{{@index}}" class="form-control" value={{piloto}} readonly>
     </div>
     <div class="col-3">
