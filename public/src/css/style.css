@@ -53,7 +53,6 @@
 }
 .info :nth-child(n){
     padding-left: 20px;
-    min-width: 130px;
     /* border: 1px solid red; */
 }
 
@@ -67,6 +66,36 @@
     background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
     transition: 800ms;
 
+}
+.tarjeta-carrera{
+    display: flex;
+    justify-content: left;
+    gap: 0px;
+    border: 1px solid black;
+    margin-top: 3px;
+    background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
+    transition: 800ms;
+    
+}
+.puntoeql{
+    display: flex;
+    justify-content:left;
+    max-width: 20px;
+}
+
+.puntoseq{
+    color:var(--f1Red);
+    font-family: f1bold;
+    font-size: 30px;
+
+}
+
+.container-puntos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    gap: 30px;
+    align-items: center;
+    margin-left: 30px;
 }
 
 .tarjeta img {
@@ -220,6 +249,14 @@ nav {
     border-radius: 4px;
     margin-left: 4px;
     margin-bottom: 15px;
+}
+
+.pts2{
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 0 !important;
 }
 
 .race-escu{

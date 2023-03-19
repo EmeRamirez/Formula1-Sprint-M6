@@ -5,18 +5,18 @@ const router = Router();
 
 //===================GET===================//
 
-router.get('/', (req,res) => {
-    leerArchivo('./data/equipos.json')
-    .then(data => {
-        let arrEquipos = Object.values(data.equipos);
-        res.render("home",{equipos:arrEquipos});
-    })
-    .catch(err => {
-        res.render("404");
-        console.log("No se pudo leer el archivo.");
-        res.render("error")
-    })  
-})
+// router.get('/', (req,res) => {
+//     leerArchivo('./data/equipos.json')
+//     .then(data => {
+//         let arrEquipos = Object.values(data.equipos);
+//         res.render("home",{equipos:arrEquipos});
+//     })
+//     .catch(err => {
+//         res.render("404");
+//         console.log("No se pudo leer el archivo.");
+//         res.render("error")
+//     })  
+// })
 
 //===================GET===================//
 
@@ -197,9 +197,6 @@ router.get('/races', (req,res) => {
             (el.abandono)? el.tiempo="N/F":el.abandono;
         })
         console.log(copyArrCarrera);
-        //Aca tengo que enviar un arreglo de objetos en el que el primer competidor del circuito seleccionado tenga
-        //el tiempo en formato xx:xx:xx:xxx y desde el lugar 2 en adelante deben tener +xx.xxx. Esto debe hacerse en 
-        //este punto, y antes de enviarse al renderizado.
         
         res.render("races",{carrera:copyArrCarrera});
     })
@@ -208,5 +205,22 @@ router.get('/races', (req,res) => {
         res.render("error",{mensaje:"Error"})})
 
 })
+
+
+
+router.get('/', (req,res) => {
+    leerArchivo('./data/equipos copy.json')
+    .then(data => {
+        let arrEquipos = Object.values(data.equipos);
+        res.render("home",{equipos:arrEquipos});
+    })
+    .catch(err => {
+        res.render("404");
+        console.log("No se pudo leer el archivo.");
+        res.render("error")
+    })  
+})
+
+
 
 export default router;
