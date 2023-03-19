@@ -20,7 +20,7 @@ hbs.registerHelper('contarAbandonos',(arr)=>{
 })
 
 hbs.registerHelper('sumarIndex',(num)=>{
-   
+
     return parseInt(num+1);
 })
 
