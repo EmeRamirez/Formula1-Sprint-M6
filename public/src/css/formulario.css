@@ -36,9 +36,10 @@
 }
 
 .tituloform{
-    font-family:f1bold;
+    font-family:f1wide;
+    font-size: 30px;
     color:var(--f1Light);
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     background-color: var(--f1Dark);
     padding-left: 50px;
     padding-right: 50px;

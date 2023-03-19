@@ -183,7 +183,7 @@ router.get('/races', (req,res) => {
         let arrCarrera = Object.values(data.carrera);
 
         let prueba = arrCarrera[0].resultados;
-        console.log(prueba[0]);
+        console.log(prueba);
 
         //Aca tengo que enviar un arreglo de objetos en el que el primer competidor del circuito seleccionado tenga
         //el tiempo en formato xx:xx:xx:xxx y desde el lugar 2 en adelante deben tener +xx.xxx. Esto debe hacerse en 

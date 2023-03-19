@@ -12,6 +12,11 @@
 }
 
 @font-face {
+    font-family: "f1wide";
+    src: url(../fonts/Formula1-Wide_web_0.ttf) format("truetype");
+}
+
+@font-face {
     font-family: "titiLight";
     src: url(../fonts/TitilliumWeb-Light.ttf) format("truetype");
 }
@@ -60,6 +65,7 @@
     border: 1px solid black;
     margin-top: 3px;
     background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
+    transition: 800ms;
 
 }
 
@@ -193,7 +199,7 @@ nav {
 }
 
 .race-piloto{
-    font-family: f1bold;
+    font-family: f1wide;
     font-size: 25px;
     margin-left: 2vw;
     margin-top: 4px;
@@ -201,15 +207,19 @@ nav {
 
 .race-puntos{
     font-family: f1bold;
-    text-align: left;
-    font-size: 30px;
+    
+    font-size: 38px;
+    font-weight: bolder;
     color: var(--f1Red);
     margin-top: 3px;
 }
 
 .pts{
-    font-size: 12px;
-    padding-left: 1px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 4px;
+    margin-bottom: 15px;
 }
 
 .race-escu{
@@ -221,7 +231,7 @@ nav {
 .race-info{
     display: grid;
     gap: 25px;
-    grid-template-columns: 300px 200px 200px
+    grid-template-columns: 550px 200px 200px
 }
 
 .race-tiempo{
