@@ -14,7 +14,10 @@ window.addEventListener('load', () => {
             intervalo = intervalo+200;
         }
     }
+
 })
+
+
 
 
 // window.addEventListener('load',()=>{

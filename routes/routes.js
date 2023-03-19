@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { Router } from "express";
-import { calcularPos, escribirArchivo, leerArchivo, convMS , sumarPuntos , contAbandonos } from "../utils/handlers.js";
+import { calcularPos, escribirArchivo, leerArchivo, convMS , sumarPuntos , contAbandonos, mostrarTiempo, mostrarDif } from "../utils/handlers.js";
 const router = Router();
 
 //===================GET===================//
@@ -9,7 +9,6 @@ router.get('/', (req,res) => {
     leerArchivo('./data/equipos.json')
     .then(data => {
         let arrEquipos = Object.values(data.equipos);
-        console.log(arrEquipos);
         res.render("home",{equipos:arrEquipos});
     })
     .catch(err => {
@@ -178,24 +177,36 @@ router.get('/drivers', (req,res) => {
 })
 
 router.get('/races', (req,res) => {
+    let carreraIndex = 0;//req.body.select;
     leerArchivo('./data/circuitos.json')
     .then(data => {
-        let arrCarrera = Object.values(data.carrera);
+        let arrCarrera = data.carrera[carreraIndex].resultados;
 
-        let prueba = arrCarrera[0].resultados;
-        console.log(prueba[0]);
 
+        let copyArrCarrera = arrCarrera.slice();
+
+        let tiempo1=0;
+        copyArrCarrera.forEach((el,index)=>{
+            if (index==0){
+                tiempo1 =el.tiempo;
+                el.tiempo=mostrarTiempo(el.tiempo)
+                
+            }else{
+                el.tiempo=mostrarDif(tiempo1,el.tiempo)
+            }
+            (el.abandono)? el.tiempo="N/F":el.abandono;
+        })
+        console.log(copyArrCarrera);
         //Aca tengo que enviar un arreglo de objetos en el que el primer competidor del circuito seleccionado tenga
         //el tiempo en formato xx:xx:xx:xxx y desde el lugar 2 en adelante deben tener +xx.xxx. Esto debe hacerse en 
         //este punto, y antes de enviarse al renderizado.
         
-        res.render("races",{carrera:prueba});
+        res.render("races",{carrera:copyArrCarrera});
     })
     .catch(err => {
         console.log('Error al leer el JSON');
         res.render("error",{mensaje:"Error"})})
 
-     
 })
 
 export default router;
