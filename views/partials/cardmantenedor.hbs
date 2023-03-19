@@ -1,19 +1,21 @@
 <!-- CARD -->
 <div class="mb-3 col-11 container-piloto">
-    <div class="col-5">
-        <label for="nombre0" class="form-label">{{escuderia}}</label>
-        <input type="text" name="nombre{{@index}}" class="form-control" value={{piloto}} readonly>
-    </div>
-    {{!-- <div class="col-2">
-        <label for="posicion0" class="form-label">Posición</label>
-        <input type="number" name="posicion{{}}" class="form-control" placeholder="Posición">
-    </div> --}}
     <div class="col-3">
-        <label for="tiempo0" class="form-label">Tiempo</label>
-        <input type="float" name="tiempo{{@index}}" class="form-control" placeholder="Tiempo" required>
+        <label for="wea" class="form-label">{{escuderia}}</label>
+        <input type="text" name="escud{{@index}}" class="form-control d-none" value="{{escuderia}}" readonly>
+        <input type="text" name="nombre{{@index}}" class="form-control" value="{{nombre}}" readonly>
     </div>
-    <div class="form-check form-switch form-check-reverse col-3">
-        <label class="form-check-label" for="flexSwitchCheckReverse">Abandono</label>
+    <div class="col-6">
+        <label for="tiempo{{@index}}" class="form-label">Tiempo</label>
+        <div class="cont-tiempo col-12">
+            <input type="number" min="0" name="hora{{@index}}" class="form-control col-3 fct" placeholder="Hrs" required>
+            <input type="number" min="0" max="59" name="minuto{{@index}}" class="form-control col-3 fct" placeholder="Min" required>
+            <input type="number" min="0" max="59" name="segundo{{@index}}" class="form-control col-3 fct" placeholder="Seg" required>
+            <input type="number" min="0" max="999" name="mlseg{{@index}}" class="form-control col-3 fct" placeholder="Ms" required>
+        </div>
+    </div>
+    <div class="form-check form-switch form-check-reverse col-2">
+        <label class="form-check-label" for="check{{@index}}">Abandono</label>
         <input class="form-check-input" name="check{{@index}}" type="checkbox"  id="flexSwitchCheckReverse">
     </div>
 </div>

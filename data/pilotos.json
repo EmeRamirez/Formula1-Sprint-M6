@@ -6,6 +6,7 @@
             "escuderia":"Alfa Romeo",
             "escudo": "https://www.linkpicture.com/q/alfaromeo_1.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },   
@@ -15,6 +16,7 @@
             "escuderia":"Alfa Romeo",
             "escudo": "https://www.linkpicture.com/q/alfaromeo_1.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },  
@@ -24,6 +26,7 @@
             "escuderia":"Alpine",
             "escudo": "https://www.linkpicture.com/q/alpine.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -33,6 +36,7 @@
             "escuderia":"Alpine",
             "escudo": "https://www.linkpicture.com/q/alpine.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -42,6 +46,7 @@
             "escuderia":"Alpha Tauri",
             "escudo": "https://www.linkpicture.com/q/alphatauri.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -51,6 +56,7 @@
             "escuderia":"Alpha Tauri",
             "escudo": "https://www.linkpicture.com/q/alphatauri.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -60,6 +66,7 @@
             "escuderia":"Aston Martin",
             "escudo": "https://www.linkpicture.com/q/astonmartin.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -69,6 +76,7 @@
             "escuderia":"Aston Martin",
             "escudo": "https://www.linkpicture.com/q/astonmartin.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -78,6 +86,7 @@
             "escuderia":"Ferrari",
             "escudo": "https://www.linkpicture.com/q/ferrari.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -87,6 +96,7 @@
             "escuderia":"Ferrari",
             "escudo": "https://www.linkpicture.com/q/ferrari.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -96,6 +106,7 @@
             "escuderia":"Hass",
             "escudo": "https://www.linkpicture.com/q/haas.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -105,6 +116,7 @@
             "escuderia":"Hass",
             "escudo": "https://www.linkpicture.com/q/haas.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -114,6 +126,7 @@
             "escuderia":"McLaren",
             "escudo": "https://www.linkpicture.com/q/mclaren_2.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -123,6 +136,7 @@
             "escuderia":"McLaren",
             "escudo": "https://www.linkpicture.com/q/mclaren_2.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -132,6 +146,7 @@
             "escuderia":"Mercedes",
             "escudo": "https://www.linkpicture.com/q/mercedesbenz.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -141,6 +156,7 @@
             "escuderia":"Mercedes",
             "escudo": "https://www.linkpicture.com/q/mercedesbenz.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -150,6 +166,7 @@
             "escuderia":"Red Bull",
             "escudo": "https://www.linkpicture.com/q/redbull_1.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -159,6 +176,7 @@
             "escuderia":"Red Bull",
             "escudo": "https://www.linkpicture.com/q/redbull_1.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -168,6 +186,7 @@
             "escuderia":"Williams",
             "escudo": "https://www.linkpicture.com/q/williams.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         },
@@ -177,6 +196,7 @@
             "escuderia":"Williams",
             "escudo": "https://www.linkpicture.com/q/williams.png",
             "posiciones":[],
+            "puntajes":[],
             "tiempos":[],
             "abandono":[]
         }
