@@ -1,0 +1,74 @@
+@import url(style.css);
+@import url(formulario.css);
+
+.container-exterior-drivers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:35px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vw;
+    margin-left: 4vw;
+    margin-bottom: 3vw;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 240px;
+    min-width: 240px;
+    min-height: 380px;
+    max-height: 380px;
+    align-items: center;
+    text-align: center;
+    border: 3px solid rgba(255, 0, 0, 0.473);
+    border-top-left-radius: 25px;
+    padding-top: 10px;
+    opacity: 0%;
+    transition: 500ms;
+}
+
+.dcard-tit{
+    font-family: f1bold;
+    max-width: 160px;
+}
+
+.dlogo img{
+    max-height: 100px;
+}
+
+.dcard-contpts{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    margin: 0;
+}
+
+.dcard-pts{
+    font-family: f1bold;
+    color: red;
+    font-size: 75px;
+}
+
+.dcard-contpts{
+    display: flex;
+    gap: 9px;
+}
+
+.dcard-contpts h4{
+    padding-top: 10px;
+}
+
+.dcard-foot{
+    font-family: titiBold;
+    display: flex;
+    flex-direction: column;
+}
+
+.dcard-foot h5{
+    padding-top: 7px;
+}
+
+.dcard-foot h3{
+    background-color: red;
+    color: aliceblue;
+}

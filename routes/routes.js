@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { Router } from "express";
-import { calcularPos, escribirArchivo, leerArchivo, convMS } from "../utils/handlers.js";
+import { calcularPos, escribirArchivo, leerArchivo, convMS , sumarPuntos , contAbandonos } from "../utils/handlers.js";
 const router = Router();
 
 //===================GET===================//
@@ -8,9 +8,8 @@ const router = Router();
 router.get('/', (req,res) => {
     leerArchivo('./data/equipos.json')
     .then(data => {
-        let json = data;
-        let arrEquipos = Object.values(json.equipos);
-        // console.log(arrEquipos);
+        let arrEquipos = Object.values(data.equipos);
+        console.log(arrEquipos);
         res.render("home",{equipos:arrEquipos});
     })
     .catch(err => {
@@ -49,13 +48,10 @@ router.post('/mantenedor', (req,res) => {
         let dataCircuitos = JSON.parse(fs.readFileSync("./data/circuitos.json"));
         let arrPilotos = dataPilotos.piloto;
         let arrCircuitos = dataCircuitos.carrera;
-        
-        //console.log(Object.values(arrPilotos)[0]) //Así se llaman para recorrerlo con métodos de array
-        //console.log(Object.values(arrCircuitos)[0]) //Así se llaman para recorrerlo con métodos de array
 
         /*Inicializamos en 0 los parámetros posiciones, tiempo y abandonos para más adelante sobreescribir la
         información ordenada por carrera en el JSON del piloto*/
-        console.log(Object.values(arrPilotos));
+        // console.log(Object.values(arrPilotos));
         Object.values(arrPilotos).forEach(el => {
             for (let i=0 ; i < Object.values(arrCircuitos).length ; i++){
                 (!el.posiciones[i]) ? el.posiciones[i] = 0 : el.posiciones[i];
@@ -110,12 +106,96 @@ router.post('/mantenedor', (req,res) => {
         //Se ingresa un nuevo key al objeto del circuito correspondiente con la info de los competidores en dicha carrera
         arrCircuitos[carreraIndex].resultados = arrCarrera;
 
+        //Se calculan los puntos por equipo y se asignan al JSON de equipos
+        let dataEquipos = JSON.parse(fs.readFileSync('./data/equipos.json'))
+        let arrEquipos = dataEquipos.equipos;
+
+        // console.log(arrEquipos);
+        // console.log(arrPilotos);
+        Object.values(arrEquipos).forEach(eq => { eq.puntos = 0})
+        Object.values(arrEquipos).forEach(eq => {
+            Object.values(arrPilotos).forEach(pil => {
+                if (eq.escuderia == pil.escuderia){
+                    eq.puntos = eq.puntos + sumarPuntos(pil.puntajes)
+                }
+            })
+        })
+        //Ordena los equipos(objetos) de forma descendente según puntaje.
+        arrEquipos.sort((a,b) => (b.puntos - a.puntos));
+
         //Finalmente se sobreescriben los cambios en los archivos JSON correspondientes
-        fs.writeFileSync('./data/circuitos.json',JSON.stringify(dataCircuitos))
-        fs.writeFileSync('./data/pilotos.json',JSON.stringify(dataPilotos))
-        res.send("<script>alert('La información fue almacenada exitosamente.');window.location.href='/mantenedor'</script>")
+        fs.writeFileSync('./data/equipos.json',JSON.stringify(dataEquipos));
+        fs.writeFileSync('./data/circuitos.json',JSON.stringify(dataCircuitos));
+        fs.writeFileSync('./data/pilotos.json',JSON.stringify(dataPilotos));
+        res.send("<script>alert('La información fue almacenada exitosamente.');window.location.href='/mantenedor'</script>");
     }
 })
 
+router.get('/confirmacion' , (req,res) => {
+    let dataPilotos = JSON.parse(fs.readFileSync("./data/pilotos.json"));
+    let dataCircuitos = JSON.parse(fs.readFileSync("./data/circuitos.json"));
+    let arrPilotos = dataPilotos.piloto;
+    let arrCircuitos = dataCircuitos.carrera;
+
+    //Se calculan los puntos por equipo y se asignan al JSON de equipos
+    let dataEquipos = JSON.parse(fs.readFileSync('./data/equipos.json'))
+    let arrEquipos = dataEquipos.equipos;
+
+    // console.log(arrEquipos);
+    // console.log(arrPilotos);
+    Object.values(arrEquipos).forEach(eq => { eq.puntos = 0})
+    Object.values(arrEquipos).forEach(eq => {
+        Object.values(arrPilotos).forEach(pil => {
+            if (eq.escuderia == pil.escuderia){
+                eq.puntos = eq.puntos + sumarPuntos(pil.puntajes)
+            }
+        })
+    })
+    //Ordena los equipos(objetos) de forma descendente según puntaje.
+    arrEquipos.sort((a,b) => (b.puntos - a.puntos))
+    fs.writeFileSync('./data/equipos.json',JSON.stringify(dataEquipos));
+    res.render("confirmacion")
+})
+
+
+//===================GET===================//
+
+router.get('/drivers', (req,res) => {
+    leerArchivo('./data/pilotos.json')
+    .then(data => {
+        let arrPilotos = Object.values(data.piloto);
+        
+        //Se ordenan los pilotos por puntos
+        arrPilotos.sort((a,b) => (sumarPuntos(b.puntajes) - (sumarPuntos(a.puntajes))));
+
+        res.render("drivers",{pilotos:arrPilotos});
+    })
+    .catch(err => {
+        res.render("404");
+        console.log("No se pudo leer el archivo.");
+        res.render("error")
+    })  
+})
+
+router.get('/races', (req,res) => {
+    leerArchivo('./data/circuitos.json')
+    .then(data => {
+        let arrCarrera = Object.values(data.carrera);
+
+        let prueba = arrCarrera[0].resultados;
+        console.log(prueba[0]);
+
+        //Aca tengo que enviar un arreglo de objetos en el que el primer competidor del circuito seleccionado tenga
+        //el tiempo en formato xx:xx:xx:xxx y desde el lugar 2 en adelante deben tener +xx.xxx. Esto debe hacerse en 
+        //este punto, y antes de enviarse al renderizado.
+        
+        res.render("races",{carrera:prueba});
+    })
+    .catch(err => {
+        console.log('Error al leer el JSON');
+        res.render("error",{mensaje:"Error"})})
+
+     
+})
 
 export default router;

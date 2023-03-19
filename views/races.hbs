@@ -1,0 +1,28 @@
+{{#> layout}}
+    <h1 class="tablaPosiciones">Tabla de Carreras</h1>
+
+    <!-- Se crea la primera card aparte para que este tenga el formato de tiempo correcto -->
+    {{!-- <div class="tarjeta">
+        <div class="separador">&nbsp; <h2 class="pos">POS</h2></div>
+    <div class="separador1">&nbsp;<h2 class="numPos">#{{posicion}}</h2>
+    </div>
+    
+    <div class="race-info">
+        <div>
+            <div class="race-piloto">{{nombre}}</div>
+            <div class="race-escu">{{escuderia}}</div>
+        </div>
+        <div class="race-puntos">
+            {{puntaje}}<span class="pts">pts</span>
+        </div>
+        <div class="race-tiempo">
+            <p>{{visualizarTiempo tiempo}}</p>
+        </div>
+    </div>
+</div>
+</div> --}}
+    {{#each carrera}}
+        {{>cardraces}}
+    {{/each}}
+
+{{/layout}}

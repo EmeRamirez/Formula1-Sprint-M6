@@ -25,7 +25,6 @@ export function convMS(hr,min,seg,ms){
 }
 
 export function mostrarTiempo(tiempoenms){
-    console.log("===============");
     let totalseg = Math.trunc(tiempoenms/1000)
     let ms = tiempoenms%1000
     let seg = (Math.trunc(tiempoenms/1000))%60
@@ -80,3 +79,21 @@ export function calcularPos(arr){
         }
     })
 };
+
+export function sumarPuntos(arr){
+    let acumulador = 0;
+    for (let i=0 ; i < arr.length ; i++){
+        acumulador = acumulador + arr[i]
+    }
+    return acumulador;
+}
+
+export function contAbandonos(arr){
+    let acumulador = 0;
+    for (let i=0 ; i < arr.length ; i++){
+        if (arr[i] == true){
+            acumulador++;
+        }
+    }
+    return acumulador;
+}
