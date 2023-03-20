@@ -10,6 +10,7 @@
     font-family: "f1regular";
     src: url(../fonts/Formula1-Regular_web_0.ttf) format("truetype");
 }
+
 @font-face {
     font-family: "f1wide";
     src: url(../fonts/Formula1-Wide_web_0.ttf) format("truetype");
@@ -40,7 +41,7 @@
 } */
 /* .info :nth-child(n) { */
 
-    /* html{
+/* html{
         width: 160%;
     } */
 .info {
@@ -50,10 +51,12 @@
     color: var(--f1Dark);
     gap: 30px;
 }
-.tarjetaMula{
+
+.tarjetaMula {
     display: none;
 }
-.info :nth-child(n){
+
+.info :nth-child(n) {
     padding-left: 20px;
     /* border: 1px solid red; */
 }
@@ -68,7 +71,8 @@
     transition: 800ms;
 
 }
-.tarjeta-carreras{
+
+.tarjeta-carreras {
     display: flex;
     justify-content: left;
     gap: 0px;
@@ -76,16 +80,17 @@
     margin-top: 3px;
     background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
     transition: 800ms;
-    
+
 }
-.puntoeql{
+
+.puntoeql {
     /* display: flex;
     justify-content:left; */
     max-width: 100%;
 }
 
-.puntoseq{
-    color:var(--f1Red);
+.puntoseq {
+    color: var(--f1Red);
     font-family: f1bold;
     font-size: 30px;
     min-width: 120px;
@@ -93,9 +98,9 @@
     text-align: right;
 }
 
-.container-puntos{
+.container-puntos {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 1.3vw;
     align-items: center;
     margin-left: 3.3vw;
@@ -117,14 +122,16 @@
     background-color: var(--f1Dark);
     /* background: linear-gradient(0deg, rgba(233,233,233,1) 0%, rgb(98, 98, 98) 80%); */
 }
-.flags{
+
+.flags {
     display: flex;
-    align-items:end;
+    align-items: end;
     justify-content: end;
     /* background-color: lime; */
     /* background-image: url(https://cdn.britannica.com/25/4825-004-F1975B92/Flag-United-Kingdom.jpg); */
 }
-.menuHead{
+
+.menuHead {
     background-color: var(--f1Dark);
     display: flex;
     flex-wrap: wrap;
@@ -137,18 +144,21 @@
     justify-content: start;
 } */
 
-.logoHead{
+.logoHead {
     padding-left: 30px;
     padding-right: 30px;
 }
-.headLogoF1{
+
+.headLogoF1 {
     display: flex;
     align-items: end;
 }
-.tablaHeader{
+
+.tablaHeader {
     display: flex;
     justify-content: center;
 }
+
 .tablaPosiciones {
     background-color: var(--f1Dark);
     font-family: titibold;
@@ -161,6 +171,7 @@
     border-bottom: 3px solid var(--f1Red);
 
 }
+
 .pos {
     color: var(--f1Gray);
     font-size: 20px;
@@ -178,28 +189,33 @@
     padding-right: 7px;
 }
 
-.footLogoF1{
+.footLogoF1 {
     filter: invert(100%) sepia(4%) saturate(0%) hue-rotate(349deg) brightness(106%) contrast(108%);
 }
-.footLogoF1 img{
+
+.footLogoF1 img {
     min-width: 250px;
     padding: 20px;
 }
 
-.foot1{
+.foot1 {
     padding: 20px;
-    color:var(--f1Light)
+    color: var(--f1Light)
+}
+
+.rrss{
+    filter: invert(100%) sepia(4%) saturate(0%) hue-rotate(349deg) brightness(106%) contrast(108%);
 
 }
-.foot3{
+.foot3 {
     /* border: 1px solid wheat; */
     text-align: center;
     max-width: 250px;
     padding: 20px;
-    color:var(--f1Light)
+    color: var(--f1Light)
 }
 
-.cierre{
+.cierre {
     background-color: var(--f1Dark);
     color: var(--f1Light);
     display: flex;
@@ -207,6 +223,7 @@
     align-items: center;
     padding-top: 10px;
 }
+
 .piePagina {
     display: flex;
     justify-content: space-evenly;
@@ -216,6 +233,7 @@
     background-color: var(--f1Red);
     gap: 10px;
 }
+
 /* .footers{
     display: flex;
     justify-content: ;
@@ -236,17 +254,19 @@ nav {
     align-items: center;
     min-height: 70px;
     padding-left: 30px;
-    gap:25px;
+    gap: 25px;
     background-color: #15151e;
 }
-.btn{
+
+.btn {
     gap: 50px;
 }
+
 .btn-outline-danger {
     /* background-color: rgb(201, 36, 36) !important; */
     max-height: 40px;
     --bs-btn-border-color: var(--f1Red) !important;
-    --bs-btn-hover-bg: var(--f1Red)  !important;
+    --bs-btn-hover-bg: var(--f1Red) !important;
     text-decoration: none;
     color: white;
     font-weight: 800;
@@ -272,23 +292,23 @@ nav {
     border: 1px solid black;
 }
 
-.race-piloto{
+.race-piloto {
     font-family: f1wide;
     font-size: 25px;
     margin-left: 2vw;
     margin-top: 4px;
 }
 
-.race-puntos{
+.race-puntos {
     font-family: f1bold;
-    
+
     font-size: 38px;
     font-weight: bolder;
     color: var(--f1Red);
     margin-top: 3px;
 }
 
-.pts{
+.pts {
     font-size: 16px;
     padding: 5px;
     border-radius: 4px;
@@ -296,7 +316,7 @@ nav {
     margin-bottom: 15px;
 }
 
-.pts2{
+.pts2 {
     font-size: 16px;
     border-radius: 4px;
     margin-bottom: 15px;
@@ -304,26 +324,26 @@ nav {
     padding-left: 0 !important;
 }
 
-.race-escu{
+.race-escu {
     margin-left: 2vw;
     margin-top: 0;
     font-size: 14px;
 }
 
-.race-info{
+.race-info {
     display: grid;
     gap: 25px;
     grid-template-columns: 550px 200px 200px
 }
 
-.race-tiempo{
+.race-tiempo {
     font-family: f1regular;
     font-size: 25px;
     padding-top: 10px;
     margin: 0;
 }
 
-.cont-listacarreras{
+.cont-listacarreras {
     display: flex;
     flex-direction: row;
     background-color: #15151D;
@@ -332,23 +352,23 @@ nav {
     justify-content: space-between;
 }
 
-.form-race{
+.form-race {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     gap: 30px;
     margin-right: 70px;
-    
+
 }
 
-.form-select2{
+.form-select2 {
     font-family: f1regular;
     background-color: #15151ee3;
     color: aliceblue;
 }
 
-.tablaPosiciones2{
+.tablaPosiciones2 {
     background-color: var(--f1Dark);
     font-family: titibold;
     color: var(--f1Light);
@@ -356,7 +376,10 @@ nav {
     margin-bottom: 5px;
 }
 
-.e404{
+.e404 {
+
+    position: relative;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -365,3 +388,12 @@ nav {
     margin: 3vw 0;
 }
 
+.txt404 {
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
