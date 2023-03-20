@@ -36,8 +36,8 @@
 }
 
 .tituloform{
-    font-family:f1wide;
-    font-size: 30px;
+    font-family:f1bold;
+    font-size: 40px;
     color:var(--f1Light);
     letter-spacing: 5px;
     background-color: var(--f1Dark);

@@ -10,11 +10,6 @@
     font-family: "f1regular";
     src: url(../fonts/Formula1-Regular_web_0.ttf) format("truetype");
 }
-.flags{
-    background-color: lime;
-    background-image: url(https://cdn.britannica.com/25/4825-004-F1975B92/Flag-United-Kingdom.jpg);
-
-}
 @font-face {
     font-family: "f1wide";
     src: url(../fonts/Formula1-Wide_web_0.ttf) format("truetype");
@@ -45,6 +40,9 @@
 } */
 /* .info :nth-child(n) { */
 
+    /* html{
+        width: 160%;
+    } */
 .info {
     display: flex;
     justify-content: space-evenly;
@@ -61,17 +59,16 @@
 }
 
 .tarjeta {
-
     display: flex;
     justify-content: left;
     gap: 0px;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     margin-top: 3px;
     background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
     transition: 800ms;
 
 }
-.tarjeta-carrera{
+.tarjeta-carreras{
     display: flex;
     justify-content: left;
     gap: 0px;
@@ -82,24 +79,28 @@
     
 }
 .puntoeql{
-    display: flex;
-    justify-content:left;
-    max-width: 20px;
+    /* display: flex;
+    justify-content:left; */
+    max-width: 100%;
 }
 
 .puntoseq{
     color:var(--f1Red);
     font-family: f1bold;
     font-size: 30px;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: right;
 
 }
 
 .container-puntos{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    gap: 27px;
-    align-items: center;
-    margin-left: 25px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; */
+    display: flex;
+    gap: 3%;
+    /* margin-left: 25px; */
+    max-width: 100%;
 }
 
 .tarjeta img {
@@ -107,27 +108,61 @@
 }
 
 .separador1 {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 100px;
+    max-width: 120px;
     background-color: var(--f1Red);
 }
 
 .separador {
+    min-width: 100px;
+    max-width: 120px;
     background-color: var(--f1Dark);
     /* background: linear-gradient(0deg, rgba(233,233,233,1) 0%, rgb(98, 98, 98) 80%); */
 }
+.flags{
+    display: flex;
+    align-items:end;
+    justify-content: end;
+    /* background-color: lime; */
+    /* background-image: url(https://cdn.britannica.com/25/4825-004-F1975B92/Flag-United-Kingdom.jpg); */
+}
+.menuHead{
+    background-color: var(--f1Dark);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+
+/* .menuHead .botones{
+    display: flex;
+    justify-content: start;
+} */
+
+.logoHead{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.headLogoF1{
+    display: flex;
+    align-items: end;
+}
+.tablaHeader{
+    display: flex;
+    justify-content: center;
+}
 .tablaPosiciones {
     background-color: var(--f1Dark);
     font-family: titibold;
     color: var(--f1Light);
-    padding-left: 50px;
-    margin-bottom: 5px;
+    min-width: 100%;
+    text-align: center;
+    /* padding-left: 50px;
+    margin-bottom: 5px; */
     border-top: 3px solid var(--f1Gray);
     border-bottom: 3px solid var(--f1Red);
 
 }
-
 .pos {
     color: var(--f1Gray);
     font-size: 20px;
@@ -156,9 +191,12 @@
 .foot1{
     padding: 20px;
     color:var(--f1Light)
+
 }
 .foot3{
     /* border: 1px solid wheat; */
+    text-align: center;
+    max-width: 250px;
     padding: 20px;
     color:var(--f1Light)
 }
@@ -196,13 +234,16 @@ a:visited {
 
 nav {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     min-height: 70px;
     padding-left: 30px;
     gap:25px;
     background-color: #15151e;
 }
-
+.btn{
+    gap: 50px;
+}
 .btn-outline-danger {
     /* background-color: rgb(201, 36, 36) !important; */
     max-height: 40px;
