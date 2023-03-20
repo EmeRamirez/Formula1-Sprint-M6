@@ -65,7 +65,9 @@
 }
 
 .dcard-contpts h4{
+    font-family: f1bold;
     padding-top: 10px;
+    color: var(--f1Red);
 }
 
 .dcard-foot{
