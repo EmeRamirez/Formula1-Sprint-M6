@@ -15,7 +15,9 @@ router.get('/mantenedor', (req,res) => {
         res.render("mantenedor",{pilotos:arrPilotos[0]})
     })
     .catch(err => {
-        res.render("error");
+        let mensaje = "No se pudo leer el archivo."
+        console.log(mensaje);
+        res.render("404",{mensaje:mensaje})
     })  
 })
 
@@ -95,11 +97,12 @@ router.post('/mantenedor', (req,res) => {
         let dataEquipos = JSON.parse(fs.readFileSync('./data/equipos.json'))
         let arrEquipos = dataEquipos.equipos;
 
-        Object.values(arrEquipos).forEach(eq => { eq.puntos = 0})
+        Object.values(arrEquipos).forEach(eq => { eq.puntos = 0 ; eq.pcarreras[carreraIndex] = 0})
         Object.values(arrEquipos).forEach(eq => {
             Object.values(arrPilotos).forEach(pil => {
                 if (eq.escuderia == pil.escuderia){
                     eq.puntos = eq.puntos + sumarPuntos(pil.puntajes)
+                    eq.pcarreras[carreraIndex] = eq.pcarreras[carreraIndex] + pil.puntajes[carreraIndex]
                 }
             })
         })
@@ -114,31 +117,7 @@ router.post('/mantenedor', (req,res) => {
     }
 })
 
-router.get('/confirmacion' , (req,res) => {
-    let dataPilotos = JSON.parse(fs.readFileSync("./data/pilotos.json"));
-    let dataCircuitos = JSON.parse(fs.readFileSync("./data/circuitos.json"));
-    let arrPilotos = dataPilotos.piloto;
-    let arrCircuitos = dataCircuitos.carrera;
 
-    //Se calculan los puntos por equipo y se asignan al JSON de equipos
-    let dataEquipos = JSON.parse(fs.readFileSync('./data/equipos.json'))
-    let arrEquipos = dataEquipos.equipos;
-
-    // console.log(arrEquipos);
-    // console.log(arrPilotos);
-    Object.values(arrEquipos).forEach(eq => { eq.puntos = 0})
-    Object.values(arrEquipos).forEach(eq => {
-        Object.values(arrPilotos).forEach(pil => {
-            if (eq.escuderia == pil.escuderia){
-                eq.puntos = eq.puntos + sumarPuntos(pil.puntajes)
-            }
-        })
-    })
-    //Ordena los equipos(objetos) de forma descendente según puntaje.
-    arrEquipos.sort((a,b) => (b.puntos - a.puntos))
-    fs.writeFileSync('./data/equipos.json',JSON.stringify(dataEquipos));
-    res.render("confirmacion")
-})
 
 
 //===================GET===================//
@@ -154,9 +133,9 @@ router.get('/drivers', (req,res) => {
         res.render("drivers",{pilotos:arrPilotos});
     })
     .catch(err => {
-        res.render("404");
-        console.log("No se pudo leer el archivo.");
-        res.render("error")
+        let mensaje = "No se pudo leer el archivo."
+        console.log(mensaje);
+        res.render("404",{mensaje:mensaje})
     })  
 })
 
@@ -187,8 +166,9 @@ router.get('/races', (req,res) => {
         res.render("races",{carrera:copyArrCarrera});
     })
     .catch(err => {
-        console.log('Error al leer el JSON');
-        res.render("error",{mensaje:"Error"})})
+        let mensaje = "No se pudo leer el archivo."
+        console.log(mensaje);
+        res.render("404",{mensaje:mensaje})})
 
 })
 
@@ -202,10 +182,12 @@ router.post('/races', (req,res) => {
     } else {
     leerArchivo('./data/circuitos.json')
     .then(data => {
+        if (!data.carrera[carreraIndex].resultados){
+            let mensaje = "La carrera que busca aún no existe."
+            res.render("404",{mensaje:mensaje});
+        } else {
         let arrCarrera = data.carrera[carreraIndex].resultados;
-
         let copyArrCarrera = arrCarrera.slice();
-
         let tiempo1=0;
         copyArrCarrera.forEach((el,index)=>{
             if (index==0){
@@ -220,7 +202,7 @@ router.post('/races', (req,res) => {
     
         
         res.render("races",{carrera:copyArrCarrera});
-
+    }
     })
 }
 })
@@ -230,18 +212,45 @@ router.post('/races', (req,res) => {
 //===================GET===================//
 
 router.get('/', (req,res) => {
-    leerArchivo('./data/equipos copy.json')
+    leerArchivo('./data/equipos.json')
     .then(data => {
         let arrEquipos = Object.values(data.equipos);
         res.render("home",{equipos:arrEquipos});
     })
     .catch(err => {
-        res.render("404");
-        console.log("No se pudo leer el archivo.");
-        res.render("error")
+        let mensaje = "No se pudo leer el archivo."
+        console.log(mensaje);
+        res.render("404",{mensaje:mensaje})
     })  
 })
 
+
+//===================TESTING GET===================//
+// router.get('/testing' , (req,res) => {
+//     let dataPilotos = JSON.parse(fs.readFileSync("./data/pilotos.json"));
+//     let dataCircuitos = JSON.parse(fs.readFileSync("./data/circuitos.json"));
+//     let dataEquipos = JSON.parse(fs.readFileSync('./data/equipos.json'));
+//     let arrPilotos = dataPilotos.piloto;
+//     let arrCircuitos = dataCircuitos.carrera;
+//     let arrEquipos = dataEquipos.equipos;
+//     let carreraIndex = 1;
+
+//     Object.values(arrEquipos).forEach(eq => { eq.puntos = 0 ; eq.pcarreras[carreraIndex] = 0})
+//     Object.values(arrEquipos).forEach(eq => {
+//      Object.values(arrPilotos).forEach(pil => {
+//         if (eq.escuderia == pil.escuderia){
+//             eq.puntos = eq.puntos + sumarPuntos(pil.puntajes)
+//             eq.pcarreras[carreraIndex] = eq.pcarreras[carreraIndex] + pil.puntajes[carreraIndex]
+//         }
+//     })
+//     })
+    
+    
+//     console.log(arrEquipos);
+//     console.log(arrPilotos);
+
+//     res.send("<script>window.location=('href=testing')</script>")
+// })
 
 
 export default router;

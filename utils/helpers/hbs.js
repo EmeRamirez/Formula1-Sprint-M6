@@ -24,6 +24,7 @@ hbs.registerHelper('sumarIndex',(num)=>{
     return parseInt(num+1);
 })
 
+
 hbs.registerHelper('visualizarTiempo',(tiempoenms)=>{
     let totalseg = Math.trunc(tiempoenms/1000)
     let ms = tiempoenms%1000
@@ -40,21 +41,3 @@ hbs.registerHelper('mostrarDiferenciaTpo',(tiempo1)=>{
     let dif = tiempo2 - tiempo1;
     return `+${dif/1000}s`;
 })
-
-// hbs.registerHelper('visTiempo',(tiempo1,index)=>{
-    
-//     if (index == 0){
-//         let compare = tiempo1;
-//         let totalseg = Math.trunc(tiempo1/1000)
-//         let ms = tiempo1%1000
-//         let seg = (Math.trunc(tiempo1/1000))%60
-//         let min = (Math.trunc(totalseg/60))%60
-//         let totalmin = Math.trunc(totalseg/60)
-//         let hr = Math.trunc(totalmin/60);
-//         return `${hr}:${min}:${seg}:${ms}`
-//     }else{
-//         let dif = tiempo1 - compare;
-//         return `+${dif/1000}s`;
-//     }
-  
-// })
