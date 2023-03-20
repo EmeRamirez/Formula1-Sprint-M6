@@ -1,23 +1,25 @@
 {{#> layout}}
+<div class="tablaHeader">
     <h1 class="tablaPosiciones">Tabla de Posiciones</h1>
-
-    {{!-- <div class="container-externo">
-        <div class="tarjetaMula">
-    <div class="separador">&nbsp; <h2 class="pos">POS</h2>
-    </div>
-    <div class="separador1">&nbsp;<h2 class="numPos">#</h2>
-    </div>
-    <div class="logo"><img src="{{escudo}}"  alt=""></img></div>
-    <div class="info">
-        <div class="escuderia">{{escuderia}}</div>
-        <div class="piloto">{{piloto1}}</div>
-        <div class="piloto2">{{piloto2}}</div>
-    </div> --}}
-
+    <img src="https://cdn.britannica.com/25/4825-004-F1975B92/Flag-United-Kingdom.jpg" width="50px" alt="">
+    {{> flags}}
 </div>
-    {{#each equipos}}
-        {{> card}}
-    {{/each}}
-    </div>
+
+{{#each equipos}}
+{{> card}}
+{{/each}}
 
 {{/layout}}
+
+{{!-- <div class="container-externo">
+    <div class="tarjetaMula">
+        <div class="separador">&nbsp; <h2 class="pos">POS</h2>
+        </div>
+        <div class="separador1">&nbsp;<h2 class="numPos">#</h2>
+        </div>
+        <div class="logo"><img src="{{escudo}}" alt=""></img></div>
+        <div class="info">
+            <div class="escuderia">{{escuderia}}</div>
+            <div class="piloto">{{piloto1}}</div>
+            <div class="piloto2">{{piloto2}}</div>
+        </div> --}}

@@ -10,7 +10,11 @@
     font-family: "f1regular";
     src: url(../fonts/Formula1-Regular_web_0.ttf) format("truetype");
 }
+.flags{
+    background-color: lime;
+    background-image: url(https://cdn.britannica.com/25/4825-004-F1975B92/Flag-United-Kingdom.jpg);
 
+}
 @font-face {
     font-family: "f1wide";
     src: url(../fonts/Formula1-Wide_web_0.ttf) format("truetype");
