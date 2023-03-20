@@ -1,6 +1,37 @@
 {{#> layout}}
-    <h1 class="tablaPosiciones">Tabla de Carreras</h1>
-
+<div class="cont-listacarreras">
+   <h1 class="tablaPosiciones2">Tabla de Carreras</h1>
+        <form class="col-7 form-race" action="races" method="post" validate>
+            <select class="form-select2" name="selectcarrera" aria-label="" required>
+            <option value="-1">Seleccione una carrera</option>
+            <option value="0">Gulf Air Bahrain GP</option>
+            <option value="1">STC Saudi Arabian GP</option>
+            <option value="2">Rolex Australian GP</option>
+            <option value="3">GP de Azerbaiyán</option>
+            <option value="4">Crypto.com Miami GP</option>
+            <option value="5">Made in Italy Emilia Romagna GP</option>
+            <option value="6">GP de Mónaco</option>
+            <option value="7">AWS Spanish GP</option>
+            <option value="8">Pirelli Canada GP</option>
+            <option value="9">GP de Austria, Red Bull Ring</option>
+            <option value="10">Aramco British GP</option>
+            <option value="11">GP de Hungría</option>
+            <option value="12">GP de Bélgica</option>
+            <option value="13">Heineken Dutch GP</option>
+            <option value="14">Pirelli Italian GP</option>
+            <option value="15">Singapore Airlines Singapore GP</option>
+            <option value="16">Lenovo Japanese GP</option>
+            <option value="17">Qatar GP</option>
+            <option value="18">Lenovo United States GP</option>
+            <option value="19">Mexico GP</option>
+            <option value="20">Rolex Brazil GP</option>
+            <option value="21">Heineken Las Vegas GP</option>
+            <option value="22">Etihad Airways Abu Dhabi GP</option>
+            </select>
+            <button class="btn btn-outline-danger" type="submit" href="races">Resultados</button>
+        </form>
+    </div>
+    
     <!-- Se crea la primera card aparte para que este tenga el formato de tiempo correcto -->
     {{#each carrera}}
         {{>cardraces}}

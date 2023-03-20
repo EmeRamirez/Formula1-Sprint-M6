@@ -93,9 +93,9 @@
 .container-puntos{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    gap: 30px;
+    gap: 27px;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 25px;
 }
 
 .tarjeta img {
@@ -204,9 +204,11 @@ nav {
     max-height: 40px;
     --bs-btn-border-color: var(--f1Red) !important;
     --bs-btn-hover-bg: var(--f1Red)  !important;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
-
-
 
 .btn-danger:hover {
     transform: scale(105%);
@@ -278,3 +280,35 @@ nav {
     margin: 0;
 }
 
+.cont-listacarreras{
+    display: flex;
+    flex-direction: row;
+    background-color: #15151D;
+    border-bottom: 3px solid var(--f1Red);
+    border-top: 3px solid var(--f1Gray);
+    justify-content: space-between;
+}
+
+.form-race{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    margin-right: 70px;
+    
+}
+
+.form-select2{
+    font-family: f1regular;
+    background-color: #15151ee3;
+    color: aliceblue;
+}
+
+.tablaPosiciones2{
+    background-color: var(--f1Dark);
+    font-family: titibold;
+    color: var(--f1Light);
+    padding-left: 50px;
+    margin-bottom: 5px;
+}

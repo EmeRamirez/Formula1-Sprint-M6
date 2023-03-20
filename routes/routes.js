@@ -3,20 +3,6 @@ import { Router } from "express";
 import { calcularPos, escribirArchivo, leerArchivo, convMS , sumarPuntos , contAbandonos, mostrarTiempo, mostrarDif } from "../utils/handlers.js";
 const router = Router();
 
-//===================GET===================//
-
-// router.get('/', (req,res) => {
-//     leerArchivo('./data/equipos.json')
-//     .then(data => {
-//         let arrEquipos = Object.values(data.equipos);
-//         res.render("home",{equipos:arrEquipos});
-//     })
-//     .catch(err => {
-//         res.render("404");
-//         console.log("No se pudo leer el archivo.");
-//         res.render("error")
-//     })  
-// })
 
 //===================GET===================//
 
@@ -25,7 +11,7 @@ router.get('/mantenedor', (req,res) => {
     .then(data => {
         let json = data;
         let arrPilotos = Object.values(json);
-        // console.log(arrPilotos[0]);
+        
         res.render("mantenedor",{pilotos:arrPilotos[0]})
     })
     .catch(err => {
@@ -50,7 +36,7 @@ router.post('/mantenedor', (req,res) => {
 
         /*Inicializamos en 0 los parámetros posiciones, tiempo y abandonos para más adelante sobreescribir la
         información ordenada por carrera en el JSON del piloto*/
-        // console.log(Object.values(arrPilotos));
+        
         Object.values(arrPilotos).forEach(el => {
             for (let i=0 ; i < Object.values(arrCircuitos).length ; i++){
                 (!el.posiciones[i]) ? el.posiciones[i] = 0 : el.posiciones[i];
@@ -76,7 +62,7 @@ router.post('/mantenedor', (req,res) => {
             (check == true) ? tiempo = 999999999 : tiempo=tiempo;
 
             //Se envían los datos al arreglo de pilotos (pilotos.json)
-            // console.log(arrPilotos)
+            
             Object.values(arrPilotos)[i].tiempos[carreraIndex] = tiempo;
             Object.values(arrPilotos)[i].abandonos[carreraIndex] = check;
             
@@ -109,8 +95,6 @@ router.post('/mantenedor', (req,res) => {
         let dataEquipos = JSON.parse(fs.readFileSync('./data/equipos.json'))
         let arrEquipos = dataEquipos.equipos;
 
-        // console.log(arrEquipos);
-        // console.log(arrPilotos);
         Object.values(arrEquipos).forEach(eq => { eq.puntos = 0})
         Object.values(arrEquipos).forEach(eq => {
             Object.values(arrPilotos).forEach(pil => {
@@ -176,12 +160,14 @@ router.get('/drivers', (req,res) => {
     })  
 })
 
+
+//===================GET===================//
+
 router.get('/races', (req,res) => {
     let carreraIndex = 0;//req.body.select;
     leerArchivo('./data/circuitos.json')
     .then(data => {
         let arrCarrera = data.carrera[carreraIndex].resultados;
-
 
         let copyArrCarrera = arrCarrera.slice();
 
@@ -196,7 +182,7 @@ router.get('/races', (req,res) => {
             }
             (el.abandono)? el.tiempo="N/F":el.abandono;
         })
-        console.log(copyArrCarrera);
+        // console.log(copyArrCarrera);
         
         res.render("races",{carrera:copyArrCarrera});
     })
@@ -207,6 +193,41 @@ router.get('/races', (req,res) => {
 })
 
 
+//===================POST===================//
+
+router.post('/races', (req,res) => {
+    let carreraIndex = req.body.selectcarrera;
+    if (carreraIndex == -1){
+        res.send("<script>alert('Selección no válida');window.location.href='/races'</script>");
+    } else {
+    leerArchivo('./data/circuitos.json')
+    .then(data => {
+        let arrCarrera = data.carrera[carreraIndex].resultados;
+
+        let copyArrCarrera = arrCarrera.slice();
+
+        let tiempo1=0;
+        copyArrCarrera.forEach((el,index)=>{
+            if (index==0){
+                tiempo1 =el.tiempo;
+                el.tiempo=mostrarTiempo(el.tiempo)
+                
+            }else{
+                el.tiempo=mostrarDif(tiempo1,el.tiempo)
+            }
+            (el.abandono)? el.tiempo="N/F":el.abandono;
+        })
+    
+        
+        res.render("races",{carrera:copyArrCarrera});
+
+    })
+}
+})
+
+
+
+//===================GET===================//
 
 router.get('/', (req,res) => {
     leerArchivo('./data/equipos copy.json')
