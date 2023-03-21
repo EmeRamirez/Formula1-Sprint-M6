@@ -288,7 +288,7 @@ nav {
     color: white;
     font-weight: 800;
     letter-spacing: 2px;
-    transition: all 500ms;
+    /* transition: all 500ms; */
     padding-left: 7px;
     padding-right: 7px;
 
