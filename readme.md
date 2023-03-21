@@ -11,7 +11,3 @@
 3. Run ``` npm install body-parser ```
 4. Run server.js
 
-
-
-Repositorio: 
-https://github.com/EmeRamirez/Sprint-M6.git
