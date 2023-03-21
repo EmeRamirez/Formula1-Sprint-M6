@@ -1,6 +1,22 @@
 @import url(style.css);
 @import url(formulario.css);
 
+<<<<<<< HEAD
+.container-exterior-drivers {
+    display: flex;
+    flex-wrap: wrap;
+=======
+/* .container-exterior-drivers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+>>>>>>> cfcd0ba353cdc48fe61fef7376720540a7101fc0
+    gap:35px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vw;
+    margin-left: 4vw;
+    margin-bottom: 3vw;
+} */
 .container-exterior-drivers {
     display: flex;
     flex-wrap: wrap;
@@ -11,7 +27,11 @@
     margin-left: 4vw;
     margin-bottom: 3vw;
 }
-
+@keyframes flexanimation { 
+    100% { 
+      flex-grow: 5; 
+    }
+  }
 .card-container{
     display: flex;
     flex-direction: column;
@@ -20,12 +40,13 @@
     min-height: 380px;
     max-height: 380px;
     align-items: center;
-    text-align: center;
+    text-align: center; 
     border: 3px solid rgba(255, 0, 0, 0.473);
     border-top-left-radius: 25px;
     padding-top: 10px;
     opacity: 0%;
     transition: 500ms;
+    animation: flexanimation 1s ease-out 1s infinite alternate backwards; 
 }
 
 .dcard-tit{
