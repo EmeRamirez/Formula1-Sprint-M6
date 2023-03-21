@@ -113,6 +113,7 @@
 
 .flags{
     display: flex;
+    justify-content: baseline;
     flex-direction: row;
     overflow: auto;
     flex: 1;
