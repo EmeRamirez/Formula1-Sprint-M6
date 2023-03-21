@@ -14,4 +14,4 @@
 
 
 Repositorio: 
-<a href='https://github.com/EmeRamirez/Sprint-M6.git'></a>
+https://github.com/EmeRamirez/Sprint-M6.git
