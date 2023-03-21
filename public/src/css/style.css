@@ -63,7 +63,7 @@
 
 .tarjeta {
     display: flex;
-    justify-content: left;
+    justify-content: start;
     gap: 0px;
     border: 1px solid rgb(0, 0, 0);
     margin-top: 3px;
@@ -74,7 +74,7 @@
 
 .tarjeta-carreras {
     display: flex;
-    justify-content: left;
+    justify-content: start;
     gap: 0px;
     border: 1px solid black;
     margin-top: 3px;
@@ -101,10 +101,17 @@
 .container-puntos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 1.3vw;
+    gap: 1vw;
     align-items: center;
     margin-left: 3.3vw;
 }
+/* .container-puntos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    align-items: center;
+    margin-left: 3.3vw;
+} */
 
 .tarjeta img {
     max-width: 100px;
@@ -124,9 +131,14 @@
 }
 
 .flags {
-    display: flex;
-    align-items: end;
-    justify-content: end;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0;
+        align-items: center;
+        margin-left: 3.3vw;
+    }
+    /* align-items: end;
+    justify-content: end; */
     /* background-color: lime; */
     /* background-image: url(https://cdn.britannica.com/25/4825-004-F1975B92/Flag-United-Kingdom.jpg); */
 }
@@ -139,10 +151,11 @@
 }
 
 
-/* .menuHead .botones{
+.menuHead .botones {
     display: flex;
     justify-content: start;
-} */
+    gap: 20px;
+}
 
 .logoHead {
     padding-left: 30px;
@@ -199,14 +212,17 @@
 }
 
 .foot1 {
+    text-align: center;
+    max-width: 250px;
     padding: 20px;
     color: var(--f1Light)
 }
 
-.rrss{
+.rrss {
     filter: invert(100%) sepia(4%) saturate(0%) hue-rotate(349deg) brightness(106%) contrast(108%);
 
 }
+
 .foot3 {
     /* border: 1px solid wheat; */
     text-align: center;
@@ -234,12 +250,6 @@
     gap: 10px;
 }
 
-/* .footers{
-    display: flex;
-    justify-content: ;
-} */
-
-
 a,
 a:visited {
     text-decoration: none;
@@ -249,6 +259,8 @@ a:visited {
 }
 
 nav {
+    font-family: titibold;
+    font-style: italic !important;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -258,20 +270,24 @@ nav {
     background-color: #15151e;
 }
 
-.btn {
-    gap: 50px;
-}
-
 .btn-outline-danger {
-    /* background-color: rgb(201, 36, 36) !important; */
     max-height: 40px;
-    --bs-btn-border-color: var(--f1Red) !important;
+    --bs-btn-border-color: var(--f1Gray) !important;
     --bs-btn-hover-bg: var(--f1Red) !important;
+    /* font-style: italic !important; */
     text-decoration: none;
     color: white;
     font-weight: 800;
     letter-spacing: 2px;
+    transition: all 500ms;
+    padding-left: 7px;
+    padding-right: 7px;
+
 }
+
+/* .btn-outline-danger :hover{
+    transition: all 500ms;
+} */
 
 .btn-danger:hover {
     transform: scale(105%);
@@ -293,15 +309,15 @@ nav {
 }
 
 .race-piloto {
-    font-family: f1wide;
-    font-size: 25px;
+    font-family: f1bold;
+    font-style: italic;
+    font-size: 35px;
     margin-left: 2vw;
     margin-top: 4px;
 }
 
 .race-puntos {
     font-family: f1bold;
-
     font-size: 38px;
     font-weight: bolder;
     color: var(--f1Red);

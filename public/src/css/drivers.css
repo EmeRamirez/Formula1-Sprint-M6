@@ -21,7 +21,11 @@
     margin-left: 4vw;
     margin-bottom: 3vw;
 }
-
+@keyframes flexanimation { 
+    100% { 
+      flex-grow: 5; 
+    }
+  }
 .card-container{
     display: flex;
     flex-direction: column;
@@ -30,12 +34,13 @@
     min-height: 380px;
     max-height: 380px;
     align-items: center;
-    text-align: center;
+    text-align: center; 
     border: 3px solid rgba(255, 0, 0, 0.473);
     border-top-left-radius: 25px;
     padding-top: 10px;
     opacity: 0%;
     transition: 500ms;
+    animation: flexanimation 1s ease-out 1s infinite alternate backwards; 
 }
 
 .dcard-tit{
