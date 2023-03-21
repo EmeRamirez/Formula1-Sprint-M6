@@ -1,15 +1,9 @@
 @import url(style.css);
 @import url(formulario.css);
 
-<<<<<<< HEAD
 .container-exterior-drivers {
     display: flex;
     flex-wrap: wrap;
-=======
-/* .container-exterior-drivers {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
->>>>>>> cfcd0ba353cdc48fe61fef7376720540a7101fc0
     gap:35px;
     justify-content: center;
     align-items: center;
