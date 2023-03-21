@@ -106,6 +106,7 @@
 .puntoeql{
     min-width: 30px;
     max-width: 30px;
+    text-align: center;
 }
 
 .container-puntos {
