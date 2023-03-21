@@ -1,12 +1,11 @@
 <div class="tarjeta tarjeta-carreras" style="opacity: 0;">
-    <div class="separador">&nbsp; <h2 class="pos">POS</h2>
-    </div>
-    <div class="separador1">&nbsp;<h2 class="numPos">#{{sumarIndex @index}}</h2>
-    </div>
+    <div class="separador">&nbsp; <h2 class="pos">POS</h2></div>
+
+    <div class="separador1">&nbsp;<h2 class="numPos">#{{sumarIndex @index}}</h2></div>
     <div class="logo"><img src="{{escudo}}" alt=""></img></div>
     <div class="info">
         <div class="puntoseq">{{puntos}} <span class="pts2">pts</span></div>
-        <div class="container-puntos" >
+        <div class="container-puntos">
             {{#each pcarreras}}
             {{> listadopuntos}}
             {{/each}}

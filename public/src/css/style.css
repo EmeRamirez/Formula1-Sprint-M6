@@ -27,10 +27,12 @@
 }
 
 :root {
-    --f1Red: RGB(229, 27, 0);
+    --f1Red: RGB(238,0,0);
     --f1Dark: RGB(21, 21, 29);
     --f1Light: rgb(233, 233, 233);
     --f1Gray: rgb(77, 77, 77);
+
+
 }
 
 /* .tarjeta >div{
@@ -57,7 +59,7 @@
 }
 
 .info :nth-child(n) {
-    padding-left: 20px;
+    /* padding-left: 20px; */
     /* border: 1px solid red; */
 }
 
@@ -69,7 +71,6 @@
     margin-top: 3px;
     background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
     transition: 800ms;
-
 }
 
 .tarjeta-carreras {
@@ -82,11 +83,15 @@
     transition: 800ms;
 
 }
+.tarjetaBanderas {
+    display: flex;
+    justify-content: start;
+    gap: 0px;
+    border: 1px solid black;
+    margin-top: 3px;
+    background: linear-gradient(90deg, rgba(244, 244, 244, 1) 0%, rgb(216, 216, 216) 100%);
+    transition: 800ms;
 
-.puntoeql {
-    /* display: flex;
-    justify-content:left; */
-    max-width: 100%;
 }
 
 .puntoseq {
@@ -99,12 +104,23 @@
 }
 
 .container-puntos {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 1vw;
-    align-items: center;
-    margin-left: 3.3vw;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    flex: 1;
+    gap: 30px;
 }
+
+.flags{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    flex: 1;
+    gap: 9.5px;
+    padding-left: 100px;
+    
+}
+
 /* .container-puntos {
     display: flex;
     flex-wrap: wrap;
@@ -127,21 +143,8 @@
     min-width: 100px;
     max-width: 120px;
     background-color: var(--f1Dark);
-    /* background: linear-gradient(0deg, rgba(233,233,233,1) 0%, rgb(98, 98, 98) 80%); */
 }
 
-.flags {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 0;
-        align-items: center;
-        margin-left: 3.3vw;
-    }
-    /* align-items: end;
-    justify-content: end; */
-    /* background-color: lime; */
-    /* background-image: url(https://cdn.britannica.com/25/4825-004-F1975B92/Flag-United-Kingdom.jpg); */
-}
 
 .menuHead {
     background-color: var(--f1Dark);

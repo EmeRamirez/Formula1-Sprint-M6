@@ -60,7 +60,7 @@
 }
 
 .highlight-text {
-    color:#c50118;
+    color: var(--f1Red);
 }
 
 .cont-tiempo{
