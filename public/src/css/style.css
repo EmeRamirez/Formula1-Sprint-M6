@@ -103,10 +103,15 @@
     text-align: right;
 }
 
+.puntoeql{
+    min-width: 10px;
+    max-width: 10px;
+}
+
 .container-puntos {
     display: flex;
     flex-direction: row;
-    overflow: auto;
+    /* overflow:auto; */
     flex: 1;
     gap: 30px;
 }
